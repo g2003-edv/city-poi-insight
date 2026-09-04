@@ -12,6 +12,7 @@ from src.report_generator import generate_html_report
 
 def main():
     print("=== 城市 POI 数据洞察 ===")
+    # TODO: 应该把分析步骤和参数配置化，现在改个路径要动代码
     
     print("[1/4] 加载数据...")
     data = load_all_data()

@@ -14,6 +14,7 @@ def analyze_od_matrix(data):
     taxi_od['S_grid_lat'] = (taxi_od['SLat'] / 0.05).astype(int)
     taxi_od['E_grid_lon'] = (taxi_od['ELng'] / 0.05).astype(int)
     taxi_od['E_grid_lat'] = (taxi_od['ELat'] / 0.05).astype(int)
+    # FIXME: 0.05°网格大小是硬编码的，不同城市尺度不一样，应该根据数据范围自动计算
     
     taxi_od['S_zone'] = taxi_od['S_grid_lon'].astype(str) + '_' + taxi_od['S_grid_lat'].astype(str)
     taxi_od['E_zone'] = taxi_od['E_grid_lon'].astype(str) + '_' + taxi_od['E_grid_lat'].astype(str)

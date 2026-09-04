@@ -124,6 +124,7 @@ REPORT_TEMPLATE = """<!DOCTYPE html>
 
 
 def generate_html_report(data):
+    # TODO: HTML模板应该拆到单独文件里，现在嵌在代码里太长太难维护
     taxi_od = data['taxi_od']
     poi = data['poi']
     

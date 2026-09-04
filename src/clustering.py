@@ -31,6 +31,7 @@ def cluster_poi(data):
     
     eps = 0.01
     db = DBSCAN(eps=eps, min_samples=5).fit(coords.values)
+    # TODO: DBSCAN参数应该根据数据密度自动估计，现在手动调eps比较玄学
     coords['cluster'] = db.labels_
     
     n_clusters = len(set(db.labels_)) - (1 if -1 in db.labels_ else 0)

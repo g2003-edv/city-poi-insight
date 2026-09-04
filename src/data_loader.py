@@ -8,6 +8,7 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
 
 def load_taxi_od():
     path = os.path.join(DATA_DIR, 'TaxiOD.csv')
+    # FIXME: 有些CSV是GBK编码，这里没指定encoding，碰到会报错
     df = pd.read_csv(path)
     df = df[(df['SLng'] > 70) & (df['SLng'] < 140)]
     df = df[(df['SLat'] > 15) & (df['SLat'] < 55)]

@@ -13,6 +13,7 @@ def generate_heatmap(data):
     
     pickup_points = taxi_od[['SLng', 'SLat']].dropna()
     pickup_points = pickup_points.sample(min(5000, len(pickup_points)), random_state=42)
+    # TODO: 采样5000个点是为了防止Folium卡顿，但会丢失稀疏区域的信息，考虑用聚类聚合代替采样
     
     center_lat = pickup_points['SLat'].median(); center_lng = pickup_points['SLng'].median(); m = folium.Map(location=[center_lat, center_lng], zoom_start=11, tiles='CartoDB positron')
     HeatMap(pickup_points.values, radius=12, blur=15, max_zoom=13).add_to(m)
