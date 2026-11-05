@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.idea/
+.vscode/
+
+# 分析产物
+output/
+*.log
+
+# 原始/大体积数据：TaxiOD 含可识别车辆轨迹，不随仓库分发；详见 data/README.md
+# 注意：只匹配 data/ 的直接子文件，data/上海poi/*.csv 与 data/shanghai_shp/ 仍会被跟踪
+data/*.csv
+
+# 操作系统
+.DS_Store
+Thumbs.db

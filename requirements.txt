@@ -1,9 +1,13 @@
-﻿pandas>=1.5.0
-numpy>=1.21.0
-matplotlib>=3.5.0
-seaborn>=0.12.0
-folium>=0.14.0
-geopandas>=0.12.0
-scikit-learn>=1.2.0
-jinja2>=3.1.0
-shapely>=2.0.0
+# 版本下限沿用原配置，~= 同时约束主版本上限，避免意外跨大版本升级
+pandas~=1.5
+numpy~=1.21
+matplotlib~=3.5
+seaborn~=0.12
+folium~=0.14
+geopandas~=0.12
+scikit-learn~=1.2
+jinja2~=3.1
+shapely~=2.0
+# geopandas.read_file 读取 shp 需要的 I/O 引擎（任选其一，两个都装上更稳）
+fiona~=1.9
+pyogrio~=0.6
